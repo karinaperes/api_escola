@@ -1,4 +1,4 @@
-const Aluno = require('../models/Aluno')
+const Usuario = require('../models/Usuario')
 const { sign } = require('jsonwebtoken')
 
 class LoginController {
@@ -14,14 +14,14 @@ class LoginController {
                 return res.status(400).json({ erro: 'Informe a sua senha' })
             }
 
-            const aluno = await Aluno.findOne({
-                where: { email: email, password: password }
+            const usuario = await Usuario.findOne({
+                where: { email: email }
             })
-            if (!aluno) {
-                return res.status(404).json({ erro: 'Nenhum aluno corresponde ao email e senha informados' })
+            if (!usuario) {
+                return res.status(404).json({ erro: 'Nenhum usuario corresponde ao email e senha informados' })
             }
 
-            const payload = { sub: aluno.id, email: aluno.email, nome: aluno.nome }
+            const payload = { sub: usuario.id, email: usuario.email, nome: usuario.nome }
 
             const token = sign(payload, process.env.SECRET_JWT)
 
