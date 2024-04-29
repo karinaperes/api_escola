@@ -2,7 +2,7 @@
 		
 ### Projeto para prática dos exercícios do curso FuturoDEV FMT
 		
-Api desenvolvida com node.js, JWT, express, sequelize e postgresql.
+Api desenvolvida com node.js, JWT, bcrypt, express, sequelize e postgresql.
 O projeto tem como objetivo administrar cadastros de uma escola.
 Utilizamos o CRUD para, criar, consultar, alterar e excluir os cadastros, 
 no banco de dados postgresql e o JWT para autenticação das rotas privadas,
