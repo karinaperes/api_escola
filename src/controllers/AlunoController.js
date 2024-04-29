@@ -1,5 +1,6 @@
 const Aluno = require('../models/Aluno')
 
+
 class AlunoController {
     async cadastrar(req, res) {
         try {
